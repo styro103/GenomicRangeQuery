@@ -16,13 +16,7 @@ The part of the DNA between positions 2 and 4 contains nucleotides G and C (twic
 The part between positions 5 and 5 contains a single nucleotide T, whose impact factor is 4, so the answer is 4.
 The part between positions 0 and 6 (the whole string) contains all nucleotides, in particular nucleotide A whose impact factor is 1, so the answer is 1.
 
-Write a function that, given a non-empty zero-indexed string S consisting of N characters and two non-empty zero-indexed arrays P and Q consisting of M integers, 
-	returns an array consisting of M integers specifying the consecutive answers to all queries.
-The sequence should be returned as:
-	a Results structure (in C), or
-	a vector of integers (in C++), or
-	a Results record (in Pascal), or
-	an array of integers (in any other programming language).
+Write a function that, given a non-empty zero-indexed string S consisting of N characters and two non-empty zero-indexed arrays P and Q consisting of M integers, returns an array consisting of M integers specifying the consecutive answers to all queries.
 
 For example, given the string S = CAGCCTA and arrays P, Q such that:
     P[0] = 2    Q[0] = 4
