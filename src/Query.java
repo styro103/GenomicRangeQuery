@@ -51,24 +51,28 @@ class Query
                     impacts[K] = convert(S.charAt(x)); //Fill Position of Impacts With Impact Factor of Nucleotide
                     continue; //Goto Next Iteration of For Loop
                 }
-				if (x<=minFactPos && y>=minFactPos) //If Range Includes Minimum Factor Position
+				if (x<=minFactPos && y>=minFactPos) //If Range Includes Minimum Factor's Position
 				{
 					impacts[K] = convert(S.charAt(minFactPos)); //Fill Position of Impacts With Minimum Impact Factor of Whole Sequence
                     continue; //Goto Next Iteration of For Loop
 				}
+				///*
 				for (int j=0; j<4; j++) //General Case
 				{
+					//For Each Query, Check Each Nucleotide From Minimum
+						//If it Exists Between Range, Mark as Minimum Factor
 					int subt = 0;
 					
-					if (x>0)
-						subt = ps[x-1][j];
-					if (ps[y][j]-subt>0)
+					if (x>0) //If Starting Range Value is Not First Index
+						subt = ps[x-1][j]; //Get Count of Nucleotide Appearances Before Staring Value 
+					if (ps[y][j]-subt>0) //Subtract Amount Before Starting Value, If More Than Zero
 					{
-						impacts[K] = j+1;
-						break;
+						impacts[K] = j+1; //Must be Minimum
+						break; //Onto the Next Query
 					}
 				}
-				//impacts[K] = convert(S.charAt(minNucl(S.substring(P[K], Q[K]+1)))); //Easy Version, But Makes the Runtime O(N*M)
+				//*/
+				//impacts[K] = convert(S.charAt(minNucl(S.substring(x, y+1)))); Easy Version, But Makes the Runtime O(N*M)
             }
 		}
 		
